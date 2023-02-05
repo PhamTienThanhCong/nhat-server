@@ -1,5 +1,5 @@
 const authController = require('../controllers/AuthController');
-const authMiddleware = require('../middleWare/authMiddleware');
+// const authMiddleware = require('../middleWare/authMiddleware');
 const router = require('express').Router();
 
 //register
@@ -12,6 +12,6 @@ router.post('/login', authController.loginUser);
 router.post('/refresh', authController.requestRefreshToken);
 
 //logout
-router.post('/logout', authMiddleware.verifyToken, authController.logoutUser);
+router.post('/logout', authController.logoutUser);
 
 module.exports = router;
