@@ -59,8 +59,8 @@ app.post('/pay', cors(),(req, res) => {
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": "http://localhost:3006/success",
-            "cancel_url": "http://localhost:8000/cancel"
+            "return_url": "https://desu-shop-chi.vercel.app/success",
+            "cancel_url": "https://nhat-desu-server.onrender.com/cancel"
         },
         "transactions": [{
             
@@ -109,7 +109,7 @@ app.get('/success',cors(),async (req, res) => {
             throw error;
         } else {
             console.log(JSON.stringify(payment));
-            res.redirect('http://localhost:3006');
+            res.redirect('https://desu-shop-chi.vercel.app');
         }
     });
 });
