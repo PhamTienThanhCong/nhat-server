@@ -52,6 +52,13 @@ app.use('/v1/cart',cartRoute);
 app.use('/v1/order', orderRoute);
 app.use('/v1/chat', chatRoute);
 
+app.get("/", (request, response) => {
+    const status = {
+       "Status": "Running"
+    };
+    response.send(status);
+ });
+
 app.post('/pay', cors(),(req, res) => {
     try{const create_payment_json = {
         "intent": "sale",
